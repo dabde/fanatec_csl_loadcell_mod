@@ -18,8 +18,8 @@ Currently you would pay 200€ for the Loadcell Pedal kit. With this mod, you mo
 Think default fanatec wheelbase has 12 bit and usb 16 bit, so you get a little less resolution.
 
 - 10 bit arduino resolution
- - for hall sensor (200-900 analog read) it's fine.
- - opamp load cell (520-1000 analog read) it's more like a 9 bit, with removing noice 8 bit resolution
+  - for hall sensor (200-900 analog read) it's fine.
+  - opamp load cell (520-1000 analog read) it's more like a 9 bit, with removing noice 8 bit resolution
 
 
 ### timing/samples per second
@@ -84,3 +84,23 @@ Vcc -> White wire (R1 pin)
 GND -> Black wire (R2 pin)
 V+ -> red wire
 V- -> half of the voltage devider (middle between R1 and R2)
+
+## code
+
+Nothing complicated here. But some meantions.
+
+### libs
+
+thx for the creators and maintainers.
+
+- [arduino joystick lib](https://github.com/MHeironimus/ArduinoJoystickLibrary)
+- [arduino multi map lib](https://github.com/RobTillaart/MultiMap)
+
+### code infos
+
+- possibility to overwrite the pedal behavior with a non linear map
+  - not need, hall sensor is nearly linear (only beginning and end is around 3% off from the expected value)
+  - don't know if for a loadcell this has any benefit, but it's should be possible
+- load cell smoothing
+  - to avoid jitter from the analog read, if the value change is not big, it's average out over 50 samples (49 + 1). means 50ms.
+  - if the change is bigger than 40 voltage steps, it's takes 2 + 1 samples
