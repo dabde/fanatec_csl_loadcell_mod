@@ -35,7 +35,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,
 
 void setup() {
 
-  //Serial.begin(115200);
+  Serial.begin(115200);
 
   Joystick.setThrottleRange(0, 1024);
   Joystick.setBrakeRange(0, 1024);
@@ -59,9 +59,11 @@ void loop() {
   }
   int breakVal = multiMap<int>(round(breakAvg),MyPedals.inBreakMM,MyPedals.outBreakMM, sizeof(MyPedals.inBreakMM));
 
-  //Serial.print(breakAvg);
-  //Serial.print(" ");
-  //Serial.println(breakVal);
+  Serial.print(0);
+  Serial.print(" ");
+  Serial.print(1024);
+  Serial.print(" ");  
+  Serial.println(breakVal);
   
   Joystick.setThrottle(accVal);
   Joystick.setBrake(breakVal);
