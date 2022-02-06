@@ -1,6 +1,8 @@
 # fanatec csl DIY loadcell mod
 DIY Loacell Mod for Fanatec CSL Pedals
 
+![](./Pictures/final_fp.jpeg)
+
 ## why?
 
 Why not? :D ...
@@ -40,9 +42,10 @@ With the INA333 OpAmp, from the data sheet you can get G=1 150Khz to G=1000 350h
 - 3x M6 Nuts (nylon, to avoid becoming loose over time) - 3€ (10 pcs)
 - 1x 50Kg load cell - 12€ (10pcs)
 - 8x 3x12mm wood flat head screws - 4€ (50Pcs)
+- some 6mm washer
 - wire/perfboard
 
-Total costs: 38€
+Total costs: ~38€
 
 ## assemble
 
